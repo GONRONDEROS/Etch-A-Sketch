@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    createBoard(32);
-    console.log('hello');
+    createBoard(16);
 });
 
 function createBoard(size){
@@ -11,13 +10,13 @@ function createBoard(size){
 
     let totalOfDivs = size * size; 
     for (let i = 0; i< totalOfDivs; i++) {
-        let div = document.createElement('div');
-        div.style.backgroundColor = 'red';
-        board.insertAdjacentElement('beforeend', div);
+        let square = document.createElement('div');
+        square.style.backgroundColor = 'red';
+        board.insertAdjacentElement('beforeend', square);
     };
 };
 
-function getSize(){
-    
+function getSize(input){
+    createBoard(input);
 }
 

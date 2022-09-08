@@ -12,8 +12,13 @@
     <body>
         <h1>Etch-A-Sketch</h1>
         <div class="header">
-            <h6>Select the size</h6>
-            <button id="popup" class="btn btn-danger">Select</button>
+            <input 
+                type="text" 
+                placeholder="Size of Board" 
+                value="16" 
+                onchange="getSize(this.value)"
+            />
+            <button class="btn btn-success">Select</button>
         </div>
         <div class="board"></div>
         <div class="footer">
@@ -22,6 +27,6 @@
             <button class="btn btn-danger">Eraser</button>
             <button class="btn btn-primary">Reset</button>
         </div>
-    
+            
     </body>
 </html>
