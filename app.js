@@ -17,4 +17,7 @@ function createBoard(size){
     };
 };
 
+function getSize(){
+    
+}
 
