@@ -1,8 +1,9 @@
-let color = 'black';
-
 document.addEventListener("DOMContentLoaded", function(){
     createBoard(16);
 });
+
+let color = 'black';
+let click = false;
 
 function createBoard(size){
     let board = document.querySelector('.board');
@@ -29,10 +30,12 @@ function getSize(input){
 };
 
 function squareColor(){
-    if(color === 'random'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = color;
+    if(click){
+        if(color === 'random'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            this.style.backgroundColor = color;
+        };
     };
 };
 
@@ -44,4 +47,17 @@ function resetBoard(){
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll("div");
     squares.forEach((div) => div.style.backgroundColor = 'white');
-}
+}; 
+
+document.querySelector("body").addEventListener("click", allow);
+
+function allow(){
+    click = !click;
+    if(click){
+        document.querySelector('.mode').textContent = 'Mode: Coloring';
+    } else {
+        document.querySelector('.mode').textContent = 'Mode: Not Coloring';
+    };
+}; 
+
+
