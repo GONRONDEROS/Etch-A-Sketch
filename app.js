@@ -51,12 +51,14 @@ function resetBoard(){
 
 document.querySelector("body").addEventListener("click", allow);
 
-function allow(){
-    click = !click;
-    if(click){
+function allow(e){
+    if(e.target.tagName != 'BUTTON'){
+        click = !click;
+        if(click){
         document.querySelector('.mode').textContent = 'Mode: Coloring';
-    } else {
-        document.querySelector('.mode').textContent = 'Mode: Not Coloring';
+        } else {
+            document.querySelector('.mode').textContent = 'Mode: Not Coloring';
+        };
     };
 }; 
 
