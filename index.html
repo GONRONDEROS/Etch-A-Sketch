@@ -10,24 +10,29 @@
     
 </head>
     <body>
-        <h1>Etch-A-Sketch</h1>
-        <div class="header">
-            <input 
-                type="text" 
-                placeholder="Size of Board" 
-                value="16" 
-                onchange="getSize(this.value)"
-            />
-            <button class="btn btn-success">Select</button>
-        </div>
-        <div class="mode">Mode: Not Coloring</div>
-        <div class="board"></div>
-        <div class="footer">
-            <button class="btn btn-dark" onclick="changeColor('black')">Black</button>
-            <button class="btn btn-secondary" onclick="changeColor('grey')">Grey</button>
-            <button class="btn btn-warning" onclick="changeColor('random')">Random</button>
-            <button class="btn btn-danger" onclick="changeColor('white')">Eraser</button>
-            <button class="btn btn-primary" onclick="resetBoard()">Reset</button>
+        <div class="flex-container">
+            <div class="title"><h1>Etch-A-Sketch</h1></div>
+            <div class="header">
+                <input 
+                    type="text" 
+                    placeholder="Size of Board" 
+                    value="16" 
+                    onchange="getSize(this.value)"
+                />
+                <button class="btn btn-success">Select</button>
+            </div>
+            <div class="error">Input must be between 2 and 100</div>
+            <div class="mode">Mode: Not Coloring</div>
+            <div class="content">
+                <div class="board"></div>
+                <div class="footer">
+                    <button class="btn btn-dark" onclick="changeColor('black')">Black</button>
+                    <button class="btn btn-secondary" onclick="changeColor('grey')">Grey</button>
+                    <button class="btn btn-warning" onclick="changeColor('random')">Random</button>
+                    <button class="btn btn-danger" onclick="changeColor('white')">Eraser</button>
+                    <button class="btn btn-primary" onclick="resetBoard()">Reset</button>
+                </div>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>

@@ -23,9 +23,10 @@ function createBoard(size){
 
 function getSize(input){
     if(input >= 2 && input <= 100){
+        document.querySelector('.error').style.display = 'none';
         createBoard(input);
     } else {
-        console.log("Debes elegir un tamano entre 2 y 100");
+        document.querySelector('.error').style.display = 'flex';
     };
 };
 
